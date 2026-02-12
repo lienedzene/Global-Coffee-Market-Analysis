@@ -1,0 +1,33 @@
+/* PROJECT: Global Coffee Market Analysis
+QUESTION: Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
+GOAL: To identify the key industrial hubs that import raw coffee to process (roast, package) and re-export it to the global market.
+*/
+
+-- SQL Query Logic:
+SELECT
+imp.Country,
+SUM(imp.Amount) AS total_imports,
+SUM(exp.Amount) AS total_reexports,
+-- This calculates what percentage of their imports they process and send back out
+ROUND((SUM(exp.Amount) / SUM(imp.Amount)) * 100,2) AS reexport_percentage
+FROM
+coffee_import imp
+INNER JOIN
+re_export exp
+ON imp.Country = exp.Country
+AND imp. Year = exp. Year
+GROUP BY
+imp.Country
+ORDER BY reexport_percentage DESC
+LIMIT 10;
+
+-- Results preview:
+/*
+| Country            | total_imports | total_reexports | reexport_percentage |
+|:-------------------|:--------------|:----------------|:--------------------|
+| Belgium            | 6240540       | 4779780         | 76.59               |
+| Belgium/Luxembourg | 1257900       | 742860          | 59.06               |
+| Germany            | 31481400      | 14558880        | 46.25               |
+| Switzerland        | 3212700       | 1485780         | 46.25               |
+| Slovakia           | 821760        | 373020          | 45.39               |
+*/

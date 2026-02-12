@@ -1,0 +1,43 @@
+/* PROJECT: Global Coffee Market Analysis
+QUESTION: Which 10 countries have had the largest production growth between 1990 and 2019?
+GOAL: To identify the top coffee-producing nations with the highest relative growth in production volume between 1990 and 2019.
+*/
+
+-- SQL query logic:
+WITH production_1990 AS 
+(
+SELECT Country, Amount AS start_amount
+FROM production
+WHERE Year = 1990
+),
+production_2019 AS 
+(
+SELECT Country, Amount AS end_amount
+FROM production
+WHERE Year = 2019
+)
+SELECT
+p1990.Country,
+p1990.start_amount AS amount_1990,
+p2019.end_amount AS amount_2019,
+-- Calculate absolute increase
+(p2019.end_amount - p1990.start_amount) AS absolute_increase,
+-- Calculate percentage growth
+ROUND(((p2019.end_amount - p1990.start_amount) / p1990.start_amount) * 100, 2) AS percentage_growth
+FROM production_1990 p1990
+INNER JOIN production_2019 p2019
+ON p1990.Country = p2019.Country
+WHERE p1990.start_amount > 0 -- Avoids division by 0 errors
+ORDER BY percentage_growth DESC
+LIMIT 10;
+
+-- Results preview:
+/*
+| Country   | amount_1990 | amount_2019 | absolute_increase | percentage_growth | 
+|:----------|:------------|:------------|:------------------|:------------------| 
+| Viet Nam  | 78600       | 1829220     | 1750620           | 2227.25           | 
+| Nicaragua | 27660	      | 172920	    | 145260            | 525.16            | 
+| Peru      | 56220	      | 230160	    | 173940            | 309.39            | 
+| Guinea    | 2640	      | 10680	    | 8040              | 304.55            | 
+| Honduras  | 94080	      | 355860	    | 261780            | 278.25            | 
+*/
