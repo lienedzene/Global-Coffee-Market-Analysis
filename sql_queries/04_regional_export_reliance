@@ -1,0 +1,33 @@
+/* PROJECT: Global Coffee Market Analysis
+QUESTION: What percentage of the produced coffee is exported from coffee producing regions in 2019?
+GOAL: To compare regional production-to-export ratios and identify which areas were most export-driven in the most recent year of the study.
+*/
+
+/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg). Conversion performed during the cleaning phase.
+*/
+
+-- SQL Query Logic:
+SELECT
+p.Region,
+SUM(p.Amount) as total_production,
+SUM(e.Amount) as total_export,
+ROUND((SUM(e.Amount) / SUM(p.Amount)) * 100,2) AS percent_exported
+FROM production p
+JOIN
+export e ON p.Country=e.Country AND p.Year=e.Year
+WHERE 
+p.Year = 2019
+GROUP BY 
+p.Region
+ORDER BY
+percent_exported DESC;
+
+-- Results preview:
+/*
+|Region                   | total_production | total_export | percent_exported |
+|:------------------------|:-----------------|:-------------|:-----------------|
+|Central America & Mexico | 1173900	         | 1059420	    | 90.25            |
+|Asia                     | 2960220	         | 2486160	    | 83.99            |
+|South America	          | 4648020	         | 3517440	    | 75.68            |
+|Africa	                  | 1121040	         | 832500       | 74.26            |
+*/

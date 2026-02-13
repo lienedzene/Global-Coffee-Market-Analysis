@@ -3,6 +3,9 @@ QUESTION: Assessing Global dominance: What share of global production did the la
 GOAL: To see how much of the global coffee supply comes from just the largest producing country.
 */
 
+/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg). Conversion performed during the cleaning phase.
+*/
+
 -- SQL Query Logic:
 SELECT 
 Country,
