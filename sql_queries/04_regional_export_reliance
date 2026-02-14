@@ -1,9 +1,13 @@
 /* PROJECT: Global Coffee Market Analysis
-QUESTION: What percentage of the produced coffee is exported from coffee producing regions in 2019?
-GOAL: To compare regional production-to-export ratios and identify which areas were most export-driven in the most recent year of the study.
+| QUESTION:
+| What percentage of the produced coffee is exported from coffee producing regions in 2019?
+| GOAL:
+| To compare regional production-to-export ratios and identify which areas were most
+| export-driven in the most recent year of the study.
 */
 
-/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg). Conversion performed during the cleaning phase.
+/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg).
+Conversion performed during the cleaning phase.
 */
 
 -- SQL Query Logic:

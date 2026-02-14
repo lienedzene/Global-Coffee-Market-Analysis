@@ -12,7 +12,7 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 2. Assessing Global dominance: What share of global production did the largest producer hold in 2019?
 3. Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
 4. What percentage of the produced coffee is exported from coffee producing regions in 2019?
-5. How many months of consumption could each country's inventory cover in 2015?
+5. How many months of demand could each country's green coffee inventory cover in 2019?
 
 ## Tools I used
 For my first self-directed project, I practiced the following tools:
