@@ -11,7 +11,7 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 1. Which 10 countries have had the largest production growth between 1990 and 2019?
 2. Assessing Global dominance: What share of global production did the largest producer hold in 2019?
 3. Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
-4. What percentage of the produced coffee is exported from coffee producing regions in 2019?
+4. What percentage of the produced coffee is exported from coffee producing countries in 2019?
 5. How many months of demand could each country's green coffee inventory cover in 2019?
 
 ## Tools I used
@@ -41,4 +41,19 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 - **Composite Primary Keys:** Implemented a Composite Primary Key across all tables. This enforced data uniqueness and ensured that joins across the 30 year dataset remained accurate.
 - **Data Validation:** I wrote SQL scripts to verify that the total production volume matched the original source files after the import, ensuring that there was no data loss.
 
+## Analysis and Insights
 
+### 1. Which 10 countries have had the largest production growth between 1990 and 2019?
+
+| Country   | Amount MT 1990 | Amount MT 2019  | Absolute Increase MT | Growth Percentage | 
+|:----------|---------------:|----------------:|---------------------:|------------------:| 
+| Viet Nam  | 78,600         | 1,829,220       | 1,750,620            | 2,227.25%         | 
+| Nicaragua | 27,660	     | 172,920	       | 145,260              | 525.16%           | 
+| Peru      | 56,220         | 230,160	       | 173,940              | 309.39%           | 
+| Guinea    | 2,640	         | 10,680	       | 8,040                | 304.55%           | 
+| Honduras  | 94,080         | 355,860	       | 261,780              | 278.25%           |
+
+> See the full SQL query [here](./sql_queries/01_production_increase.sql).
+
+- **The "Viet Nam Explosion":** Viet Nam is the most significant outlier in the dataset, with an impressive **2,227%** growth. This data reflects the impact of the Doi-Moi economic reforms that led to a rapid agricultural industrialization.
+- **The "Data Anomaly" lesson:** The massive spike demonstrates why data analysts must look beyond the spreadsheet. Without the context of Viet Nam's economic revolution, a growth rate this high might be mistaken for a data entry error.

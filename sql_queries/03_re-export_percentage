@@ -1,9 +1,14 @@
 /* PROJECT: Global Coffee Market Analysis
-QUESTION: Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
-GOAL: To identify the key industrial hubs that import raw coffee to process (roast, package) and re-export it to the global market.
+QUESTION:
+Which importing countries showed the highest re-export volumes relative to their
+total imports from 1990 to 2019?
+GOAL:
+To identify the key industrial hubs that import raw coffee to process (roast, package)
+and re-export it to the global market.
 */
 
-/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg). Conversion performed during the cleaning phase.
+/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg).
+| Conversion performed during the cleaning phase.
 */
 
 -- SQL Query Logic:

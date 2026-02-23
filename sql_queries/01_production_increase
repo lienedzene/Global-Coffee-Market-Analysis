@@ -1,9 +1,13 @@
 /* PROJECT: Global Coffee Market Analysis
-QUESTION: Which 10 countries have had the largest production growth between 1990 and 2019?
-GOAL: To identify the top coffee-producing nations with the highest relative growth in production volume between 1990 and 2019.
+QUESTION:
+Which 10 countries have had the largest production growth between 1990 and 2019?
+GOAL:
+To identify the top coffee-producing nations with the highest relative growth in
+production volume between 1990 and 2019.
 */
 
-/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg). Conversion performed during the cleaning phase.
+/* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg).
+| Conversion performed during the cleaning phase.
 */
 
 -- SQL query logic:
@@ -36,11 +40,11 @@ LIMIT 10;
 
 -- Results preview:
 /*
-| Country   | amount_1990 | amount_2019 | absolute_increase | percentage_growth | 
-|:----------|:------------|:------------|:------------------|:------------------| 
-| Viet Nam  | 78600       | 1829220     | 1750620           | 2227.25           | 
-| Nicaragua | 27660	      | 172920	    | 145260            | 525.16            | 
-| Peru      | 56220	      | 230160	    | 173940            | 309.39            | 
-| Guinea    | 2640	      | 10680	    | 8040              | 304.55            | 
-| Honduras  | 94080	      | 355860	    | 261780            | 278.25            | 
+| Country   | amount_1990 | amount_2019 | absolute_increase  | percentage_growth | 
+|:----------|------------:|------------:|-------------------:|------------------:| 
+| Viet Nam  | 78600       | 1829220     | 1750620            | 2227.25           | 
+| Nicaragua | 27660	      | 172920	    | 145260             | 525.16            | 
+| Peru      | 56220       | 230160	    | 173940             | 309.39            | 
+| Guinea    | 2640	      | 10680	    | 8040               | 304.55            | 
+| Honduras  | 94080       | 355860	    | 261780             | 278.25            | 
 */

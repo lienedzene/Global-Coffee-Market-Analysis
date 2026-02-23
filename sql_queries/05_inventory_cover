@@ -7,7 +7,7 @@
 */
 
 /* Note: All volume metrics are expressed in Metric Tonnes (1,000 kg).
-Conversion performed during the cleaning phase.
+| Conversion performed during the cleaning phase.
 */
 
 -- SQL Query Logic:
