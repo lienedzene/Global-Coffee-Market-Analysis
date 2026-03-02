@@ -67,5 +67,5 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/02_global_production_percentage.sql).
 
-- **Assesing Global Dominance:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economical shift in Brazil has a disproportionate impact on global coffee prices.
+- **Assessing Global Dominance:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economic shift in Brazil has a disproportionate impact on global coffee prices.
 - **Engineering for Scale:** Handling Brazil's multi-million tonne production volume required a specific architectural choice. To prevent integer overflow during global aggregation, I utilized BIGINT data types in the SQL schema, ensuring the system could accurately process the massive scale of world's leading producers.
