@@ -1,7 +1,6 @@
 /* PROJECT: Global Coffee Market Analysis
 QUESTION:
-Assessing Global dominance: What share of global production did the largest
-producer hold in 2019?
+What share of global production did the largest producer hold in 2019?
 GOAL:
 To see how much of the global coffee supply comes from just the largest
 producing country.

@@ -9,7 +9,7 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 ### The Questions I wanted to answer:
 
 1. Which 10 countries have had the largest production growth between 1990 and 2019?
-2. Assessing Global dominance: What share of global production did the largest producer hold in 2019?
+2. What share of global production did the largest producer hold in 2019?
 3. Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
 4. What percentage of the produced coffee is exported from coffee producing countries in 2019?
 5. How many months of demand could each country's green coffee inventory cover in 2019?
@@ -58,7 +58,8 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 - **The "Viet Nam Explosion":** Viet Nam is the most significant outlier in the dataset, with an impressive **2,227%** growth. This data reflects the impact of the Doi-Moi economic reforms that led to a rapid agricultural industrialization.
 - **The "Data Anomaly" lesson:** The massive spike demonstrates why data analysts must look beyond the spreadsheet. Without the context of Viet Nam's economic revolution, a growth rate this high might be mistaken for a data entry error.
 
-### 2. Assessing Global dominance: What share of global production did the largest producer hold in 2019?
+
+### 2. What share of global production did the largest producer hold in 2019?
 
 | Country | Amount MT   | Total Global Production MT | Market Share Percentage |
 |:--------|------------:|---------------------------:|------------------------:|
@@ -66,5 +67,5 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/02_global_production_percentage.sql).
 
-- **Market Concentration:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economical shift in Brazil has a disproportionate impact on global coffee prices.
-- **Engineering for Scale:** Handlind Brazil's multi-million tonne production volume required a specific architectural choice. To prevent integer overflow during global aggregation, I utilized BIGINT data types in the SQL schema, ensuring the system could accurately process the massive scale of world's leading producers.
+- **Assesing Global Dominance:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economical shift in Brazil has a disproportionate impact on global coffee prices.
+- **Engineering for Scale:** Handling Brazil's multi-million tonne production volume required a specific architectural choice. To prevent integer overflow during global aggregation, I utilized BIGINT data types in the SQL schema, ensuring the system could accurately process the massive scale of world's leading producers.
