@@ -57,3 +57,14 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 - **The "Viet Nam Explosion":** Viet Nam is the most significant outlier in the dataset, with an impressive **2,227%** growth. This data reflects the impact of the Doi-Moi economic reforms that led to a rapid agricultural industrialization.
 - **The "Data Anomaly" lesson:** The massive spike demonstrates why data analysts must look beyond the spreadsheet. Without the context of Viet Nam's economic revolution, a growth rate this high might be mistaken for a data entry error.
+
+### 2. Assessing Global dominance: What share of global production did the largest producer hold in 2019?
+
+| Country | Amount MT   | Total Global Production MT | Market Share Percentage |
+|:--------|------------:|---------------------------:|------------------------:|
+| Brazil  | 3,492,660   | 9,903,180                  | 35.27%                  |
+
+> See the full SQL query [here](./sql_queries/02_global_production_percentage.sql).
+
+- **Market Concentration:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economical shift in Brazil has a disproportionate impact on global coffee prices.
+- **Engineering for Scale:** Handlind Brazil's multi-million tonne production volume required a specific architectural choice. To prevent integer overflow during global aggregation, I utilized BIGINT data types in the SQL schema, ensuring the system could accurately process the massive scale of world's leading producers.
