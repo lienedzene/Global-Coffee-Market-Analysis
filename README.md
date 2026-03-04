@@ -69,3 +69,19 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 - **Assessing Global Dominance:** My analysis shows that a single country, Brazil, accounts for over **35%** of the world's total coffee production. This highlights a high level of market dependency. Any environmental or economic shift in Brazil has a disproportionate impact on global coffee prices.
 - **Engineering for Scale:** Handling Brazil's multi-million tonne production volume required a specific architectural choice. To prevent integer overflow during global aggregation, I utilized BIGINT data types in the SQL schema, ensuring the system could accurately process the massive scale of world's leading producers.
+
+
+### 3. Which importing countries showed the highest re-export volumes relative to their total imports from 1990 to 2019?
+
+| Country            | Total Imports MT | Total Re-exports MT | Re-export Percentage |
+|:-------------------|-----------------:|--------------------:|---------------------:|
+| Belgium            | 6,240,540        | 4,779,780           | 76.59%               |
+| Belgium/Luxembourg | 1,257,900        | 742,860             | 59.06%               |
+| Germany            | 31,481,400       | 14,558,880          | 46.25%               |
+| Switzerland        | 3,212,700        | 1,485,780           | 46.25%               |
+| Slovakia           | 821,760          | 373,020             | 45.39%               |
+
+> See the full SQL query [here](./sql_queries/03_re-export_percentage.sql)
+
+- **Identifying Industrial Hubs:** The data reveals that Belgium and Germany act as the primary engines of the European coffee trade. While Belgium re-exports a staggering **76.6%** of its imports, Germany's scale stands out with **14.5 million** metric tonnes processed and reexported over the 30-year period - a volume that reflects a massive industrial roasting and packaging infrastructure.
+- **The Reality of Imperfect Data:** This analysis highlights how historical impact reflects in modern data storage. For example, the transition from "Belgium/Luxembourg" to individual reporting in 1999 creates "0" values that are **historical artifacts** rather than errors. In these cases, looking at percentages provides a more accurate understanding of a country's industrial role than volumes alone.
