@@ -28,14 +28,13 @@ re_export r ON i.Country=r.Country
 AND i.Year=r.Year
 WHERE
 i.Year=2019
-AND (c.Amount+r.Amount)>0
 ORDER BY
 months_of_cover DESC;
 
 -- Results preview:
 /*
 | Country                  | inventory | consumption | re_export | months_of_cover |
-|:-------------------------|:----------|:------------|:----------|:----------------|
+|:-------------------------|----------:|------------:|----------:|----------------:|
 | Japan                    | 176040    | 453060      | 9480      | 4.6             |
 | United States of America | 410100    | 1638600     | 170520    | 2.7             |
 | Germany                  | 208740    | 520200      | 828060    | 1.9             |

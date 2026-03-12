@@ -18,7 +18,7 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 For my first self-directed project, I practiced the following tools:
 
 - **Microsoft Excel:** I used Power Query in Excel to unpivot and clean the data I sourced. I also created Pivot Tables and charts to see if there are any outliers. In the end, I created clean csv files for querying.
-- **MySQL Workbench:** I imported the clean data and ran some queries to answer my questions.
+- **MySQL Workbench:** I imported the clean data and ran queries to answer my questions.
 - **Tableau Public:** I created an interactive dashboard for visual storytelling.
 - **Visual Studio Code:** For creating my portfolio.
 - **GitHub:** For sharing all the details of my project.
@@ -55,7 +55,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/01_production_increase.sql).
 
-- **The "Viet Nam Explosion":** Viet Nam is the most significant outlier in the dataset, with an impressive **2,227%** growth. This data reflects the impact of the Doi-Moi economic reforms that led to a rapid agricultural industrialization.
+- **The Rapid Growth of Viet Nam:** In my analysis of the top 10 growth leaders, Viet Nam stands out as the most significant outlier in the dataset, with an impressive **2,227%** growth. This data reflects the impact of the Doi-Moi economic reforms that led to a rapid agricultural industrialization.
 - **The "Data Anomaly" lesson:** The massive spike demonstrates why data analysts must look beyond the spreadsheet. Without the context of Viet Nam's economic revolution, a growth rate this high might be mistaken for a data entry error.
 
 
@@ -85,3 +85,35 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 - **Identifying Industrial Hubs:** The data reveals that Belgium and Germany act as the primary engines of the European coffee trade. While Belgium re-exports a staggering **76.6%** of its imports, Germany's scale stands out with **14.5 million** metric tonnes processed and reexported over the 30-year period - a volume that reflects a massive industrial roasting and packaging infrastructure.
 - **The Reality of Imperfect Data:** This analysis highlights how historical impact reflects in modern data storage. For example, the transition from "Belgium/Luxembourg" to individual reporting in 1999 creates "0" values that are **historical artifacts** rather than errors. In these cases, looking at percentages provides a more accurate understanding of a country's industrial role than volumes alone.
+
+
+### 4. What percentage of the produced coffee is exported from coffee producing countries in 2019?
+
+| Country      | Total Production MT | Total Export MT | Percent Exported |
+|:-------------|--------------------:|----------------:|-----------------:|
+| Zambia       | 900                 | 1,620           | 180.00%          |
+| Togo         | 2,460               | 3,480           | 141.46%          |
+| India        | 299,280             | 361,680         | 120.85%          |
+| Sierra Leone | 2,400               | 2,820           | 117.50%          |
+| Tanzania     | 55,560              | 64,140          | 115.44%          |
+
+> See the full SQL query [here](./sql_queries/04_export_reliance.sql)
+
+- **Analyzing Export Dependency:** The most export-reliant countries are predominantly located in Africa and Asia. For smaller producers, like Zambia and Togo, coffee is a vital source of income. India stands out as the only major producer on this list. It's high export ratio is likely driven by its "Tea-first" culture, and the low domestic coffee demand allows the country to utilize its climate conditions to grow coffee for international commerce.
+
+- **The "Carry-over" Strategy in a Low-Price Market:** An export percentage of over **100%** reflects a strategic response to the **2019 Coffee Price Crisis**. With global coffee prices hitting 13-year lows due to the massive Brazilian surplus, these nations likely exported their "carry-over stock" to maintain their export revenues. This demonstrates how local production is often secondary to global price fluctuations when a country is export-dependent.
+
+
+### 5. How many months of demand could each country's green coffee inventory cover in 2019?
+
+| Country                  | 2019 Inventory MT | 2019 Consumption MT | 2019 Re-export MT | Months Covered |
+|:-------------------------|------------------:|--------------------:|------------------:|---------------:|
+| Japan                    | 176,040           | 453,060             | 9,480             | 4.6            |
+| United States of America | 410,100           | 1,638,600           | 170,520           | 2.7            |
+| Germany                  | 208,740           | 520,200             | 828,060           | 1.9            |
+| Norway                   | 7,440             | 46,260              | 900               | 1.9            |
+| Netherlands              | 42,420            | 121,800             | 199,440           | 1.6            |
+
+> See the full SQL query [here](./sql_queries/05_inventory_cover.sql)
+
+- **Supply Chain Security & Resilience:** 
