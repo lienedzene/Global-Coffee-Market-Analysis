@@ -153,6 +153,6 @@ These are the key obstacles I encountered and the solutions I developed to overc
 
 ### Tableau: Overcoming Visualization Limits
 
-- **Dual-Labeling Bar Charts:** Tableau does not allow labels both "Inside" and "On Top" of a single bar easily. I solved this by using a **Dual-Axis chart** - layering two identical charts on top of each other - to display the specific values while maintaining a clean look.
+- **Dual-Labeling Bar Charts:** Tableau does not allow labels both "Inside" and "On Top" of a single bar easily. I solved this by using a Dual-Axis chart - layering two identical charts on top of each other - to display the specific values while maintaining a clean look.
 
-- **Customizing Color Steps to Mitigate Outliers:** Brazil's production is so massive that it skewed the initial color gradients, causing all other producing nations to appear in a single, uniform color. To fix this as much as I can, I utilized **stepped color palettes** and chose the largest allowed amount of color steps. This ensured that smaller-scale producers were still somewhat distinguishable from one another, providing the clearest possible picture of the global market distribution.
+- **Customizing Color Steps to Mitigate Outliers:** Brazil's production is so massive that it skewed the initial color gradients, causing all other producing nations to appear in a single, uniform color. To fix this as much as I can, I utilized stepped color palettes and chose the largest allowed amount of color steps. This ensured that smaller-scale producers were still somewhat distinguishable from one another, providing the clearest possible picture of the global market distribution.
