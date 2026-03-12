@@ -122,9 +122,13 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 ## Data Visualization: The Global Coffee Market
 
+[![Dashboard](/images/GlobalCoffeMarket.png)](https://public.tableau.com/app/profile/liene.dzene/viz/CoffeeSupplyChainAnalysis/GlobalCoffeMarketAnalysis)
 
 
 To offer a better view of my SQL analysis, I built a dashboard in Tableau to visualize the scale of largest producing countries and industrial hubs in the coffee market.
--**The "Coffee Belt" Visualization:** The production map vividly displays the "Coffee Belt" - the equatorial zone with the specific climate conditions required for coffee cultivation. This visual shows why production is geographically concentrated while consumption is global.
--**The "Bean to Cup" Complexity:** The dashboard highlights the massive scale of re-exports in importing nations. This reveals that most coffee undergoes industrial processing in a second country before reaching the consumer. This multi-stage journey explains the high cost of the final product, reflecting the many participants in the global supply chain.
--**Discovery through Interactivity:** To maintain a clean and professional look, the dashboard utilizes a "minimalist-first" design. Extensive data layers are stored within tooltips, allowing users to discover deeper insights by hovering over elements without cluttering the primary visual interface.
+
+- **The "Coffee Belt" Visualization:** The production map vividly displays the "Coffee Belt" - the equatorial zone with the specific climate conditions required for coffee cultivation. This visual shows why production is geographically concentrated while consumption is global.
+
+- **The "Bean to Cup" Complexity:** The dashboard highlights the massive scale of re-exports in importing nations. This reveals that most coffee undergoes industrial processing in a second country before reaching the consumer. This multi-stage journey explains the high cost of the final product, reflecting the many participants in the global supply chain.
+
+- **Discovery through Interactivity:** To maintain a clean and professional look, the dashboard utilizes a "minimalist-first" design. Extensive data layers are stored within tooltips, allowing users to discover deeper insights by hovering over elements without cluttering the primary visual interface.
