@@ -116,4 +116,6 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/05_inventory_cover.sql)
 
-- **Supply Chain Security & Resilience:** 
+- **Supply Chain Security & Resilience:** This analysis calculates the "safety net" each country maintains against unpredicted changes in production. Japan stands out with the highest demand coverage margin, holding enough stock for **4.6** months. This shows an inventory strategy designed to prevent shortage risk caused by potential harvest failures in producing regions.
+
+- **The "Efficiency vs. Risk" Trade-off:** In contrast, European countries operate on much smaller margins - all of them under 2 months. For these nations, high re-export volumes and a focus on high-quality "fresh crop" specialty coffee encourage a high inventory turnover instead of long-term stockpiling. This approach prioritizes logistical efficiency over long-term security.
