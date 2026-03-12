@@ -119,3 +119,12 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 - **Supply Chain Security & Resilience:** This analysis calculates the "safety net" each country maintains against unpredicted changes in production. Japan stands out with the highest demand coverage margin, holding enough stock for **4.6** months. This shows an inventory strategy designed to prevent shortage risk caused by potential harvest failures in producing regions.
 
 - **The "Efficiency vs. Risk" Trade-off:** In contrast, European countries operate on much smaller margins - all of them under 2 months. For these nations, high re-export volumes and a focus on high-quality "fresh crop" specialty coffee encourage a high inventory turnover instead of long-term stockpiling. This approach prioritizes logistical efficiency over long-term security.
+
+## Data Visualization: The Global Coffee Market
+
+
+
+To offer a better view of my SQL analysis, I built a dashboard in Tableau to visualize the scale of largest producing countries and industrial hubs in the coffee market.
+-**The "Coffee Belt" Visualization:** The production map vividly displays the "Coffee Belt" - the equatorial zone with the specific climate conditions required for coffee cultivation. This visual shows why production is geographically concentrated while consumption is global.
+-**The "Bean to Cup" Complexity:** The dashboard highlights the massive scale of re-exports in importing nations. This reveals that most coffee undergoes industrial processing in a second country before reaching the consumer. This multi-stage journey explains the high cost of the final product, reflecting the many participants in the global supply chain.
+-**Discovery through Interactivity:** To maintain a clean and professional look, the dashboard utilizes a "minimalist-first" design. Extensive data layers are stored within tooltips, allowing users to discover deeper insights by hovering over elements without cluttering the primary visual interface.
