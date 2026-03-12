@@ -139,20 +139,20 @@ These are the key obstacles I encountered and the solutions I developed to overc
 
 ### Data Engineering & SQL Logic
 
--**The "Brazil" Integer Overflow:** During the aggregation of global production data, I encountered an integer overflow error. Brazil's massive output exceeded the capacity of a standard 32-bit integer. I refactored the database schema to use BIGINT, ensuring the system could accurately process and store multi-billion unit calculations.
+- **The "Brazil" Integer Overflow:** During the aggregation of global production data, I encountered an integer overflow error. Brazil's massive output exceeded the capacity of a standard 32-bit integer. I refactored the database schema to use BIGINT, ensuring the system could accurately process and store multi-billion unit calculations.
 
--**Power Query Transformation:** The raw dataset required "unpivoting" in the Power Query Editor to transition from a wide format (years as columns) to a long format (years as single dimensions). This was essential for creating my SQL queries.
+- **Power Query Transformation:** The raw dataset required "unpivoting" in the Power Query Editor to transition from a wide format (years as columns) to a long format (years as single dimensions). This was essential for creating my SQL queries.
 
--**Regional Classification:** I initially created a custom mapping to assign global regions to every country. However, as the analysis progressed, I realized that the data tells a better story and it provides more precise business insights if each country is displayed individually.
+- **Regional Classification:** I initially created a custom mapping to assign global regions to every country. However, as the analysis progressed, I realized that the data tells a better story and it provides more precise business insights if each country is displayed individually.
 
 ### The Analytical Mindset
 
--**Defending "Abnormal" Data:** When I saw Viet Nam's **2,227%** growth, my first instinct was to assume a data entry error. Instead of "cleaning" it out, I did some research on the historical context (Doi-Moi reforms). This taught me that, as an analyst, you must verify with context before you assume that a data anomaly is a mistake.
+- **Defending "Abnormal" Data:** When I saw Viet Nam's **2,227%** growth, my first instinct was to assume a data entry error. Instead of "cleaning" it out, I did some research on the historical context (Doi-Moi reforms). This taught me that, as an analyst, you must verify with context before you assume that a data anomaly is a mistake.
 
--**Handling Historical Artifacts:** The Belgian data split in 1999 created "0" values in the timeline. I worked around it by shifting from volume-based totals to **ratio-based analysis**, maintaining a consistent narrative of Belgium's role as an industrial hub despite changes in geopolitical reporting. This taught me that ratio-based analysis gives you a better and more precise insight on the data since there were also "0" values for Post-Soviet countries before the restoration of their independence.
+- **Handling Historical Artifacts:** The Belgian data split in 1999 created "0" values in the timeline. I worked around it by shifting from volume-based totals to **ratio-based analysis**, maintaining a consistent narrative of Belgium's role as an industrial hub despite changes in geopolitical reporting. This taught me that ratio-based analysis gives you a better and more precise insight on the data since there were also "0" values for Post-Soviet countries before the restoration of their independence.
 
 ### Tableau: Overcoming Visualization Limits
 
--**Dual-Labeling Bar Charts:** Tableau does not allow labels both "Inside" and "On Top" of a single bar easily. I solved this by using a **Dual-Axis chart** - layering two identical charts on top of each other - to display the specific values while maintaining a clean look.
+- **Dual-Labeling Bar Charts:** Tableau does not allow labels both "Inside" and "On Top" of a single bar easily. I solved this by using a **Dual-Axis chart** - layering two identical charts on top of each other - to display the specific values while maintaining a clean look.
 
--**Customizing Color Steps to Mitigate Outliers:** Brazil's production is so massive that it skewed the initial color gradients, causing all other producing nations to appear in a single, uniform color. To fix this as much as I can, I utilized **stepped color palettes** and chose the largest allowed amount of color steps. This ensured that smaller-scale producers were still somewhat distinguishable from one another, providing the clearest possible picture of the global market distribution.
+- **Customizing Color Steps to Mitigate Outliers:** Brazil's production is so massive that it skewed the initial color gradients, causing all other producing nations to appear in a single, uniform color. To fix this as much as I can, I utilized **stepped color palettes** and chose the largest allowed amount of color steps. This ensured that smaller-scale producers were still somewhat distinguishable from one another, providing the clearest possible picture of the global market distribution.
