@@ -4,7 +4,7 @@ This project provides an analysis of global coffee production and consumption fr
 ## Background
 The idea of this project was born naturally from my interest to learn digital tools for data analytics in combination of my history in the coffee industry.
 
-I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-dataset). It contains information about global producion, export and consumption of coffee.
+I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-dataset). It contains information about global production, export and consumption of coffee.
 
 ### The Questions I wanted to answer:
 
@@ -38,7 +38,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 ### Database Loading (MySQL)
 - **Schema Design & Optimization:** I imported the cleaned CSV files into MySQL Workbench and refined the schema.
 - **Data Type correction:** Converted columns from TEXT to VARCHAR(100) to resolve MySQL Error 1170, allowing the columns to be used in key specifications.
-- **Composite Primary Keys:** Implemented a Composite Primary Key across all tables. This enforced data uniqueness and ensured that joins across the 30 year dataset remained accurate.
+- **Composite Primary Keys:** Implemented a Composite Primary Key across all tables. This enforced data uniqueness and ensured that joins across the 30-year dataset remained accurate.
 - **Data Validation:** I wrote SQL scripts to verify that the total production volume matched the original source files after the import, ensuring that there was no data loss.
 
 ## Analysis and Insights
@@ -99,7 +99,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/04_export_reliance.sql)
 
-- **Analyzing Export Dependency:** The most export-reliant countries are predominantly located in Africa and Asia. For smaller producers, like Zambia and Togo, coffee is a vital source of income. India stands out as the only major producer on this list. It's high export ratio is likely driven by its "Tea-first" culture, and the low domestic coffee demand allows the country to utilize its climate conditions to grow coffee for international commerce.
+- **Analyzing Export Dependency:** The most export-reliant countries are predominantly located in Africa and Asia. For smaller producers, like Zambia and Togo, coffee is a vital source of income. India stands out as the only major producer on this list. Its high export ratio is likely driven by its "Tea-first" culture, and the low domestic coffee demand allows the country to utilize its climate conditions to grow coffee for international commerce.
 
 - **The "Carry-over" Strategy in a Low-Price Market:** An export percentage of over **100%** reflects a strategic response to the **2019 Coffee Price Crisis**. With global coffee prices hitting 13-year lows due to the massive Brazilian surplus, these nations likely exported their "carry-over stock" to maintain their export revenues. This demonstrates how local production is often secondary to global price fluctuations when a country is export-dependent.
 
@@ -116,7 +116,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/05_inventory_cover.sql)
 
-- **Supply Chain Security & Resilience:** This analysis calculates the "safety net" each country maintains against unpredicted changes in production. Japan stands out with the highest demand coverage margin, holding enough stock for **4.6** months. This shows an inventory strategy designed to prevent shortage risk caused by potential harvest failures in producing regions.
+- **Supply Chain Security & Resilience:** This analysis calculates the "safety net" each country maintains against unpredictable changes in production. Japan stands out with the highest demand coverage margin, holding enough stock for **4.6** months. This shows an inventory strategy designed to prevent shortage risk caused by potential harvest failures in producing regions.
 
 - **The "Efficiency vs. Risk" Trade-off:** In contrast, European countries operate on much smaller margins - all of them under 2 months. For these nations, high re-export volumes and a focus on high-quality "fresh crop" specialty coffee encourage a high inventory turnover instead of long-term stockpiling. This approach prioritizes logistical efficiency over long-term security.
 
@@ -156,3 +156,29 @@ These are the key obstacles I encountered and the solutions I developed to overc
 - **Dual-Labeling Bar Charts:** Tableau does not allow labels both "Inside" and "On Top" of a single bar easily. I solved this by using a Dual-Axis chart - layering two identical charts on top of each other - to display the specific values while maintaining a clean look.
 
 - **Customizing Color Steps to Mitigate Outliers:** Brazil's production is so massive that it skewed the initial color gradients, causing all other producing nations to appear in a single, uniform color. To fix this as much as I can, I utilized stepped color palettes and chose the largest allowed amount of color steps. This ensured that smaller-scale producers were still somewhat distinguishable from one another, providing the clearest possible picture of the global market distribution.
+
+## Conclusions & Next Steps
+
+### Project Summary
+
+This analysis of the global coffee market (1990-2019) shows a market defined by massive production leaders and efficient logistics hubs:
+
+- **Market Dominance:** Brazil is the "Titan" of coffee, controlling over 1/3 of the global market. This gives them incredible influence over global supply.
+
+- **The Growth Leader:** While Brazil leads in volume, Viet Nam represents the most impressive success story of the last 30 years, achieving a staggering 2,227% production growth through economic reforms.
+
+- **Industrial Hubs:** The data identifies Belgium as a critical industrial hub, re-exporting more than 3/4 of its imported coffee, highlighting its role as a value-add middle-man rather than a final consumer.
+
+- **Inventory Philosophy:** A clear divide exists in supply chain security - Japan maintains a high-coverage "Safety Stock" strategy (4.6 months), while European hubs prioritize higher turnover.
+
+### Future Exploration
+
+To build on these findings, the next phase of this analysis could investigate:
+
+- **The "Why":** A deep dive into the specific geopolitical and agricultural factors - such as Brazil's mechanized farming vs. Viet Nam's Doi-Moi reforms - to explain how these nations achieved such dominance.
+
+- **Environmental Correlation:** Merging this dataset with global climate data (temperature, humidity, and rainfall) to model how climate change is shifting the "Coffee Belt" and affecting harvest yields.
+
+- **Value Chain Pricing:** A challenging but vital study into price per kg at every stage of production - from the original purchase price from the farmer in producing nations to the final retail price in importing nations - to see where the most value is captured.
+
+- **Cultural Trends:** Analyzing how the rise of Third Wave coffee culture and global expansion of major specialty coffee chains have shifted demand from bulk commodity coffee to high-quality, traceable origins.
