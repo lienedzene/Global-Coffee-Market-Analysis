@@ -102,7 +102,6 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 > See the full SQL query [here](./sql_queries/04_export_reliance.sql)
 
 - **Analyzing Export Dependency:** The most export-reliant countries are predominantly located in Africa and Asia. For smaller producers, like Zambia and Togo, coffee is a vital source of income. India stands out as the only major producer on this list. Its high export ratio is likely driven by its "Tea-first" culture, and the low domestic coffee demand allows the country to utilize its climate conditions to grow coffee for international commerce.
-
 - **The "Carry-over" Strategy in a Low-Price Market:** An export percentage of over **100%** reflects a strategic response to the **2019 Coffee Price Crisis**. With global coffee prices hitting 13-year lows due to the massive Brazilian surplus, these nations likely exported their "carry-over stock" to maintain their export revenues. This demonstrates how local production is often secondary to global price fluctuations when a country is export-dependent.
 
 
@@ -119,7 +118,6 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 > See the full SQL query [here](./sql_queries/05_inventory_cover.sql)
 
 - **Supply Chain Security & Resilience:** This analysis calculates the "safety net" each country maintains against unpredictable changes in production. Japan stands out with the highest demand coverage margin, holding enough stock for **4.6** months. This shows an inventory strategy designed to prevent shortage risk caused by potential harvest failures in producing regions.
-
 - **The "Efficiency vs. Risk" Trade-off:** In contrast, European countries operate on much smaller margins - all of them under 2 months. For these nations, high re-export volumes and a focus on high-quality "fresh crop" specialty coffee encourage a high inventory turnover instead of long-term stockpiling. This approach prioritizes logistical efficiency over long-term security.
 
 ## Data Visualization: The Global Coffee Market
