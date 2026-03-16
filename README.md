@@ -17,29 +17,31 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 ## Tools I used
 For my first self-directed project, I practiced the following tools:
 
-- **Microsoft Excel:** I used **Power Query** in Excel to unpivot and clean the data I sourced. I also created Pivot Tables and charts to see if there are any outliers. In the end, I created clean csv files for querying.
+- **Microsoft Excel:** I used **Power Query** in Excel to unpivot and clean the data I sourced. I also created Pivot Tables and charts to see if there are any outliers. In the end, I created clean CSV files for querying.
 - **MySQL Workbench:** I imported the clean data and ran queries to answer my questions.
 - **Tableau Public:** I created an interactive dashboard for visual storytelling.
 - **Visual Studio Code:** For creating my portfolio.
 - **GitHub:** For sharing all the details of my project.
 
 ## Data Cleaning & Transformation
-The raw data consisted of 7 separate CSV files containing global coffee metrics from 1990 to 2019. I performed the following steps to ensure that data was ready for analysis.
+The raw data consisted of 7 separate CSV files containing global coffee metrics from 1990 to 2019. I performed the following steps to ensure that data was ready for analysis:
 
 ### Standardizing and Reshaping (Power Query)
 
 - **Unpivoting Years:** The original files were in a wide format with years as headers. I unpivoted these into a long format (Country, Year, Amount) to make the data easier to filter and more compatible with SQL and Tableau.
 - **Unit Conversion:** All measurements were converted from kilograms to metric tons to handle large-scale global volumes more effectively.
 
-### Relational Mapping (Excel)
+### Data Validation & CSV Optimization (Excel)
 
-- **Region Assignment:** Since the data only provided country names, I created a custom mapping table to assign each country to a region (e.g., South America, European Union). This improves geographic storytelling in my dashboard.
+- **Data Integrity Check:** Before exporting to MySQL, I used Pivot Tables to perform a top-to-bottom data reconciliation. By comparing the sums in Excel against the raw Kaggle source, I ensured that no data was lost or duplicated during the Power Query transformation.
+- **Schema Preparation:** I used Excel to standardize the CSV structure, ensuring consistent headers and date formats. This acted as a "gateway" step to ensure the data was optimized for a smooth import into the MySQL environment.
 
 ### Database Loading (MySQL)
+
 - **Schema Design & Optimization:** I imported the cleaned CSV files into MySQL Workbench and refined the schema.
 - **Data Type correction:** Converted columns from TEXT to VARCHAR(100) to resolve MySQL Error 1170, allowing the columns to be used in key specifications.
 - **Composite Primary Keys:** Implemented a Composite Primary Key across all tables. This enforced data uniqueness and ensured that joins across the 30-year dataset remained accurate.
-- **Data Validation:** I wrote SQL scripts to verify that the total production volume matched the original source files after the import, ensuring that there was no data loss.
+- **Data Validation:** I wrote MySQL scripts to verify that the total production volume matched the original source files after the import, ensuring that there was no data loss.
 
 ## Analysis and Insights
 
@@ -83,7 +85,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 > See the full SQL query [here](./sql_queries/03_re-export_percentage.sql)
 
-- **Identifying Industrial Hubs:** The data reveals that Belgium and Germany act as the primary engines of the European coffee trade. While Belgium re-exports a staggering **76.6%** of its imports, Germany's scale stands out with **14.5 million** metric tonnes processed and reexported over the 30-year period - a volume that reflects a massive industrial roasting and packaging infrastructure.
+- **Identifying Industrial Hubs:** The data reveals that Belgium and Germany act as the primary engines of the European coffee trade. While Belgium re-exports a staggering **76.6%** of its imports, Germany's scale stands out with **14.5 million** MT processed and reexported over the 30-year period - a volume that reflects a massive industrial roasting and packaging infrastructure.
 - **The Reality of Imperfect Data:** This analysis highlights how historical impact reflects in modern data storage. For example, the transition from "Belgium/Luxembourg" to individual reporting in 1999 creates "0" values that are **historical artifacts** rather than errors. In these cases, looking at percentages provides a more accurate understanding of a country's industrial role than volumes alone.
 
 
