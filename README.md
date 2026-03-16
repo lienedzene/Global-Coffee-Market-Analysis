@@ -2,7 +2,7 @@
 This project provides an analysis of global coffee production and consumption from 1990 to 2019, showcasing a full data lifecycle workflow. It covers everything from data acquisition and cleaning in Excel to querying in MySQL and final interactive dashboarding in Tableau Public.
 
 ## Background
-The idea of this project was born naturally from my interest to learn digital tools for data analytics in combination of my history in the coffee industry.
+The idea of this project was born naturally from my interest to learn digital tools for data analytics in combination of with history in the coffee industry.
 
 I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-dataset). It contains information about global production, export and consumption of coffee.
 
@@ -17,7 +17,7 @@ I sourced the data on [Kaggle](https://www.kaggle.com/datasets/michals22/coffee-
 ## Tools I used
 For my first self-directed project, I practiced the following tools:
 
-- **Microsoft Excel:** I used Power Query in Excel to unpivot and clean the data I sourced. I also created Pivot Tables and charts to see if there are any outliers. In the end, I created clean csv files for querying.
+- **Microsoft Excel:** I used **Power Query** in Excel to unpivot and clean the data I sourced. I also created Pivot Tables and charts to see if there are any outliers. In the end, I created clean csv files for querying.
 - **MySQL Workbench:** I imported the clean data and ran queries to answer my questions.
 - **Tableau Public:** I created an interactive dashboard for visual storytelling.
 - **Visual Studio Code:** For creating my portfolio.
