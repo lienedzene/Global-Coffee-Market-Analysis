@@ -122,7 +122,7 @@ The raw data consisted of 7 separate CSV files containing global coffee metrics 
 
 ## Data Visualization: The Global Coffee Market
 
-[![Dashboard](/images/GlobalCoffeMarket.png)](https://public.tableau.com/app/profile/liene.dzene/viz/CoffeeSupplyChainAnalysis/GlobalCoffeMarketAnalysis)
+[![Dashboard](/images/GlobalCoffeeMarket.png)](http://bit.ly/4cXcKnk)
 
 
 To offer a better view of my SQL analysis, I built a dashboard in Tableau to visualize the scale of largest producing countries and industrial hubs in the coffee market.
